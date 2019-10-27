@@ -13,16 +13,17 @@
             <button type="button"
                     title="<?= $block->escapeHtml(__('Setup Amazon Store')); ?>"
                     class="action scalable primary"
-
+                    onclick="location.href='<?= $block->escapeHtml(__($block->getUrl('channel/amazon/account_settings_credentials_index'))) ?>'">
+                <span><?= $block->escapeHtml(__('Setup Amazon Store')) ?></span>
             </button>
         </div>
     </div>
 </div>
 <div class="help-button">
     <button type="button"
-        class="action-default"
-
-        id="helpButton" >
+            class="action-default"
+            onclick="window.open('<?= $block->getUserGuideUrl() . $block->getMainMenuUrl() ?>', '_blank')"
+            id="helpButton" >
         <span><?= $block->escapeHtml(__('View User Guide')) ?></span>
     </button>
 </div>

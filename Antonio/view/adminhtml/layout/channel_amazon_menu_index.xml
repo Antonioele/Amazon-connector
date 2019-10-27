@@ -28,13 +28,13 @@
                     <argument name="block" xsi:type="string">amazon_attribute_grid.grid.container</argument>
                     <argument name="sort_order" xsi:type="string">32</argument>
                 </action>
-                <block class="Magento\Amazon\Block\Adminhtml\Amazon\View\Tab\Activity" name="amazon_activity_grid.grid.container"/>
+                <block class="Aiello1\Antonio\Block\Adminhtml\Amazon\View\Tab\Activity" name="amazon_activity_grid.grid.container"/>
                 <action method="addTab">
                     <argument name="name" xsi:type="string">amazon_activity_grid_name</argument>
                     <argument name="block" xsi:type="string">amazon_activity_grid.grid.container</argument>
                     <argument name="sort_order" xsi:type="string">33</argument>
                 </action>
-                <block class="Magento\Amazon\Block\Adminhtml\Amazon\View\Tab\Error" name="amazon_error_grid.grid.container"/>
+                <block class="Aiello1\Antonio\Block\Adminhtml\Amazon\View\Tab\Error" name="amazon_error_grid.grid.container"/>
                 <action method="addTab">
                     <argument name="name" xsi:type="string">amazon_error_grid_name</argument>
                     <argument name="block" xsi:type="string">amazon_error_grid.grid.container</argument>
@@ -42,7 +42,12 @@
                 </action>
             </block>
             </block>
+
         </referenceContainer>
+        <referenceBlock name="amazon_marketplaces.grid.container">
+            <block class="Aiello1\Antonio\Block\Adminhtml\Amazon\General" name="amazon_general_menu" template="Aiello1_Antonio::amazon/view/marketplaces.phtml"/>
+
+        </referenceBlock>
     </body>
 </page>
 
