@@ -1,0 +1,70 @@
+
+
+
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd">
+    <update handle="styles"/>
+    <body>
+        <referenceContainer name="content">
+
+            <block class="Aiello1\Antonio\Block\Adminhtml\Amazon\View" name="amazon_view">
+
+            <block class="Aiello1\Antonio\Block\Adminhtml\Amazon\View\Menu" name="amazon_view_menu">
+            <block class="Aiello1\Antonio\Block\Adminhtml\Amazon\View\Tab\Marketplaces" name="amazon_marketplaces.grid.container"/>
+            <action method="addTab">
+                <argument name="name" xsi:type="string">amazon_marketplaces</argument>
+
+                <argument name="block" xsi:type="string">amazon_marketplaces.grid.container</argument>
+                <argument name="sort_order" xsi:type="string">30</argument>
+            </action>
+                <block class="Aiello1\Antonio\Block\Adminhtml\Amazon\View\Tab\Orders" name="amazon_order_grid.grid.container"/>
+                <action method="addTab">
+                    <argument name="name" xsi:type="string">amazon_order_grid_name</argument>
+                    <argument name="block" xsi:type="string">amazon_order_grid.grid.container</argument>
+                    <argument name="sort_order" xsi:type="string">31</argument>
+                </action>
+                <block class="Aiello1\Antonio\Block\Adminhtml\Amazon\View\Tab\Attributes" name="amazon_attribute_grid.grid.container"/>
+                <action method="addTab">
+                    <argument name="name" xsi:type="string">amazon_attribute_grid_name</argument>
+                    <argument name="block" xsi:type="string">amazon_attribute_grid.grid.container</argument>
+                    <argument name="sort_order" xsi:type="string">32</argument>
+                </action>
+                <block class="Magento\Amazon\Block\Adminhtml\Amazon\View\Tab\Activity" name="amazon_activity_grid.grid.container"/>
+                <action method="addTab">
+                    <argument name="name" xsi:type="string">amazon_activity_grid_name</argument>
+                    <argument name="block" xsi:type="string">amazon_activity_grid.grid.container</argument>
+                    <argument name="sort_order" xsi:type="string">33</argument>
+                </action>
+                <block class="Magento\Amazon\Block\Adminhtml\Amazon\View\Tab\Error" name="amazon_error_grid.grid.container"/>
+                <action method="addTab">
+                    <argument name="name" xsi:type="string">amazon_error_grid_name</argument>
+                    <argument name="block" xsi:type="string">amazon_error_grid.grid.container</argument>
+                    <argument name="sort_order" xsi:type="string">34</argument>
+                </action>
+            </block>
+            </block>
+        </referenceContainer>
+    </body>
+</page>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
