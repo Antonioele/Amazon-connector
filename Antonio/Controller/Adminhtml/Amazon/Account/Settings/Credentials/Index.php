@@ -1,16 +1,16 @@
 <?php
 
 
-namespace Aiello1\Antonio\Controller\Adminhtml\Amazon\Menu;
+namespace Aiello1\Antonio\Controller\Adminhtml\Amazon\Account\Settings\Credentials;
+use Aiello1\Antonio\Model\Amazon\Definitions;
 use Magento\Backend\App\Action;
 use Magento\Backend\App\Action\Context;
 use Magento\Framework\App\ResponseInterface;
 use Magento\Framework\View\Result\PageFactory;
 
-
-class Index extends  Action
+class Index extends Action
 {
-
+    protected $resultPageFactory;
     /**
      * Execute action based on request and return result
      *
@@ -20,18 +20,14 @@ class Index extends  Action
      * @throws \Magento\Framework\Exception\NotFoundException
      */
 
-    protected $resultPageFactory;
-
-    /**
-     * @param Context $context
-     * @param PageFactory $resultPageFactory
-     */
     public function __construct(
         Context $context,
         PageFactory $resultPageFactory
+
     ) {
         parent::__construct($context);
         $this->resultPageFactory = $resultPageFactory;
+
     }
     protected function _isAllowed()
     {
@@ -40,10 +36,12 @@ class Index extends  Action
     public function execute()
     {
         // TODO: Implement execute() method.
+        $title = __('Setup Amazon Store');
+        /** @var \Magento\Framework\View\Result\Page */
         $resultPage = $this->resultPageFactory->create();
         $resultPage->setActiveMenu('Aiello1_Antonio::channel_amazon_menu');
-        $resultPage->getConfig()->getTitle()->prepend(__('Amazon Sales Channel Home'));
-
+        $resultPage->getConfig()->getTitle()->prepend($title);
         return $resultPage;
+
     }
 }
