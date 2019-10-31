@@ -2,6 +2,8 @@
 
 
 namespace Aiello1\Antonio\Controller\Adminhtml\Amazon\Account\Settings\Credentials;
+use Aiello1\Antonio\Api\AccountRepositoryInterface;
+use Aiello1\Antonio\Api\Data\AccountInterface;
 use Aiello1\Antonio\Model\Amazon\Definitions;
 use Magento\Backend\App\Action;
 use Magento\Backend\App\Action\Context;
@@ -11,6 +13,7 @@ use Magento\Framework\View\Result\PageFactory;
 class Index extends Action
 {
     protected $resultPageFactory;
+    protected $accountRepository;
     /**
      * Execute action based on request and return result
      *
@@ -22,11 +25,12 @@ class Index extends Action
 
     public function __construct(
         Context $context,
-        PageFactory $resultPageFactory
-
+        PageFactory $resultPageFactory,
+AccountRepositoryInterface $accountRepository
     ) {
         parent::__construct($context);
         $this->resultPageFactory = $resultPageFactory;
+        $this->accountRepository = $accountRepository;
 
     }
     protected function _isAllowed()
