@@ -46,7 +46,7 @@
         </referenceContainer>
         <referenceBlock name="amazon_marketplaces.grid.container">
             <block class="Aiello1\Antonio\Block\Adminhtml\Amazon\General" name="amazon_general_menu" template="Aiello1_Antonio::amazon/view/marketplaces.phtml"/>
-
+            <uiComponent name="amazon_menu_grid"/>
         </referenceBlock>
     </body>
 </page>

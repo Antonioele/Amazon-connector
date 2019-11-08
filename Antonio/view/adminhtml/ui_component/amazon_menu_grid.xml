@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * Copyright © Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <argument name="data" xsi:type="array">
+        <item name="js_config" xsi:type="array">
+            <item name="provider" xsi:type="string">amazon_menu_grid.amazon_menu_grid_data_source</item>
+        </item>
+    </argument>
+    <settings>
+        <spinner>amazon_menu_grid_columns</spinner>
+        <deps>
+            <dep>amazon_menu_grid.amazon_menu_grid_data_source</dep>
+        </deps>
+    </settings>
+    <dataSource name="amazon_menu_grid_data_source" component="Magento_Ui/js/grid/provider">
+        <settings>
+            <storageConfig>
+                <param name="cacheRequests" xsi:type="boolean">false</param>
+            </storageConfig>
+            <updateUrl path="mui/index/render"/>
+        </settings>
+        <aclResource>Magento_SalesChannels::channel_amazon</aclResource>
+        <dataProvider class="Aiello1\Antonio\Ui\DataProvider\Listing\Menu\Marketplace\DataProvider" name="amazon_menu_grid_data_source">
+            <settings>
+                <requestFieldName>id</requestFieldName>
+                <primaryFieldName>merchant_id</primaryFieldName>
+            </settings>
+        </dataProvider>
+    </dataSource>
+</listing>
