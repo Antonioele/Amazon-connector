@@ -6,6 +6,7 @@ use Magento\Backend\App\Action;
 use Magento\Backend\App\Action\Context;
 use Magento\Framework\App\ResponseInterface;
 use Magento\Framework\View\Result\PageFactory;
+use Aiello1\Antonio\Model\Amazon\AccountFactory;
 
 
 class Index extends  Action
@@ -21,7 +22,7 @@ class Index extends  Action
      */
 
     protected $resultPageFactory;
-
+protected  $modello;
     /**
      * @param Context $context
      * @param PageFactory $resultPageFactory
@@ -29,9 +30,12 @@ class Index extends  Action
     public function __construct(
         Context $context,
         PageFactory $resultPageFactory
-    ) {
+
+
+) {
         parent::__construct($context);
         $this->resultPageFactory = $resultPageFactory;
+
     }
     protected function _isAllowed()
     {
@@ -39,6 +43,8 @@ class Index extends  Action
     }
     public function execute()
     {
+
+
         // TODO: Implement execute() method.
         $resultPage = $this->resultPageFactory->create();
         $resultPage->setActiveMenu('Aiello1_Antonio::channel_amazon_menu');

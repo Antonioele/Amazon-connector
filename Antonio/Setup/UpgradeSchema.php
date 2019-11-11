@@ -17,7 +17,7 @@ class UpgradeSchema implements UpgradeSchemaInterface {
 
         /** @var AdapterInterface $connection */
         $connection = $setup->getConnection();
-        if (version_compare($context->getVersion(), '2.2.0', '<')) {
+        if (version_compare($context->getVersion(), '1.0.0', '<')) {
 
 
             $tables = [

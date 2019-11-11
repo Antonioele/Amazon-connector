@@ -1,22 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--
-/**
- * Copyright © Magento. All rights reserved.
- * See COPYING.txt for license details.
- */
--->
 <listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
-    <argument name="data" xsi:type="array">
+
+<argument name="data" xsi:type="array">
         <item name="js_config" xsi:type="array">
             <item name="provider" xsi:type="string">amazon_menu_grid.amazon_menu_grid_data_source</item>
         </item>
     </argument>
-    <settings>
-        <spinner>amazon_menu_grid_columns</spinner>
-        <deps>
-            <dep>amazon_menu_grid.amazon_menu_grid_data_source</dep>
-        </deps>
-    </settings>
+
     <dataSource name="amazon_menu_grid_data_source" component="Magento_Ui/js/grid/provider">
         <settings>
             <storageConfig>
@@ -24,7 +14,7 @@
             </storageConfig>
             <updateUrl path="mui/index/render"/>
         </settings>
-        <aclResource>Magento_SalesChannels::channel_amazon</aclResource>
+
         <dataProvider class="Aiello1\Antonio\Ui\DataProvider\Listing\Menu\Marketplace\DataProvider" name="amazon_menu_grid_data_source">
             <settings>
                 <requestFieldName>id</requestFieldName>
@@ -32,4 +22,41 @@
             </settings>
         </dataProvider>
     </dataSource>
+    <listingToolbar name="listing_top">
+        <argument name="data" xsi:type="array">
+            <item name="config" xsi:type="array">
+                <item name="sticky" xsi:type="boolean">false</item>
+            </item>
+        </argument>
+        <bookmark name="bookmarks"/>
+        <columnsControls name="columns_controls"/>
+        <filters name="listing_filters" />
+        <paging name="listing_paging"/>
+    </listingToolbar>
+    <columns name="amazon_menu_grid_columns">
+    <column name="merchant_id">
+        <argument name="data" xsi:type="array">
+            <item name="config" xsi:type="array">
+                <item name="filter" xsi:type="string">text</item>
+                <item name="label" xsi:type="string" translate="true">Merchant Id</item>
+                <item name="visible" xsi:type="boolean">false</item>
+            </item>
+        </argument>
+    </column>
+        <column name="name" class="Aiello1\Antonio\Ui\Component\Listing\Amazon\Menu\AccountName">
+            <argument name="data" xsi:type="array">
+                <item name="options" xsi:type="object">Aiello1\Antonio\Ui\Component\Listing\Amazon\Menu\AccountLinks</item>
+                <item name="config" xsi:type="array">
+                    <item name="sortOrder" xsi:type="number">5</item>
+                    <item name="resizeDefaultWidth" xsi:type="string">1</item>
+                    <item name="bodyTmpl" xsi:type="string">ui/grid/cells/html</item>
+                    <item name="sortable" xsi:type="boolean">false</item>
+                    <item name="filter" xsi:type="string">select</item>
+                    <item name="dataType" xsi:type="string">select</item>
+                    <item name="label" xsi:type="string" translate="true">Amazon Store Name</item>
+                </item>
+            </argument>
+        </column>
+    </columns>
+
 </listing>
