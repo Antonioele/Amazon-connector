@@ -8,6 +8,7 @@ declare(strict_types=1);
 
 namespace Aiello1\Antonio\Block\Adminhtml\Amazon;
 
+use Aiello1\Antonio\Api\AccountRepositoryInterface;
 use Aiello1\Antonio\Model\Amazon\Definitions;
 use Magento\Backend\Block\Template;
 use Magento\Backend\Block\Template\Context;
@@ -21,7 +22,7 @@ class General extends Template
 {
     /** @var AccountRepositoryInterface $accountRepository */
 
-
+protected  $accountRepossitory;
     /**
      * @param Context $context
      * @param AccountRepositoryInterface $accountRepository
@@ -30,12 +31,25 @@ class General extends Template
      */
     public function __construct(
         Context $context,
-
+        AccountRepositoryInterface $accountRepository,
         array $data = []
     )
     {
         parent::__construct($context, $data);
 
+    }
+    /**
+     * Get Amazon account
+     *
+     * @return AccountInterface
+     */
+    public function getAccount()
+    {
+        /** @var int */
+        $merchantId = $this->getMerchantId();
+
+        /** @var AccountInterface */
+        return $this->accountRepository->getByMerchantId($merchantId, true);
     }
     public function getUserGuideUrl()
     {

@@ -1,0 +1,38 @@
+<?php
+/**
+ * Copyright © Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+/** @var \Magento\Amazon\Block\Adminhtml\Amazon\General $block */
+
+?>
+ <?php $account = $block->getAccount() ?>
+<?php if ($account->getSetupStep()): ?>
+    <div class="breadcrumbs">
+        <div class="items">
+            <div class="item empty"></div>
+            <div class="item home">
+                <a href="<?= $block->escapeHtml($block->getUrl('channel/amazon/menu_index'))
+                ?>" class="action-previous">
+                    <?= $block->escapeHtml('Amazon Sales Channel Home') ?>
+                </a>
+            </div>
+        </div>
+    </div>
+<?php elseif ($merchantId = $account->getMerchantId()): ?>
+    <div class="breadcrumbs">
+        <div class="items">
+            <div class="item empty"></div>
+            <div class="item home">
+                <a href="<?= $block->escapeHtml($block->getUrl(
+                    'channel/amazon/account_index',
+                    ['merchant_id' => $merchantId]
+                )) ?>" class="action-previous">
+                    <?= $block->escapeHtml($block->getMarketplaceName()) . $block->escapeHtml(' Home') ?>
+                </a>
+            </div>
+        </div>
+    </div>
+<?php endif ?>
