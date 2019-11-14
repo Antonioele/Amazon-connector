@@ -22,7 +22,7 @@ class General extends Template
 {
     /** @var AccountRepositoryInterface $accountRepository */
 
-protected  $accountRepossitory;
+protected  $accountRepository;
     /**
      * @param Context $context
      * @param AccountRepositoryInterface $accountRepository
@@ -68,6 +68,10 @@ protected  $accountRepossitory;
         /** @var string */
         $url = Definitions::MAIN_MENU_URL;
         return $this->escapeHtml($url);
+    }
+    public function getMerchantId()
+    {
+        return $this->getRequest()->getParam('merchant_id');
     }
 
 }

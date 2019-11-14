@@ -5,7 +5,8 @@
     <update handle="styles"/>
     <body>
         <referenceContainer name="content">
-
+            <block class="Aiello1\Antonio\Block\Adminhtml\Amazon\ServicesConnectorCheck"
+                   template="Aiello1_Antonio::amazon/servicesconnectorcheck.phtml"/>
             <block class="Aiello1\Antonio\Block\Adminhtml\Amazon\View" name="amazon_view">
 
             <block class="Aiello1\Antonio\Block\Adminhtml\Amazon\View\Menu" name="amazon_view_menu">

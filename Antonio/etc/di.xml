@@ -8,6 +8,6 @@
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
 
     <!-- Interfaces -->
-    <preference for="Magento\Amazon\Api\Data\AccountInterface" type="Magento\Amazon\Model\Amazon\Account" />
-
+    <preference for="Aiello1\Antonio\Api\Data\AccountInterface" type="Aiello1\Antonio\Model\Amazon\Account" />
+    <preference for="Aiello1\Antonio\Api\AccountRepositoryInterface" type="Aiello1\Antonio\Model\Amazon\AccountRepository" />
 </config>
