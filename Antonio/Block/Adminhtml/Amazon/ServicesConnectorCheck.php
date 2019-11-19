@@ -100,6 +100,8 @@ class ServicesConnectorCheck extends Template
      */
     public function isValidApiGatewayKey(): bool
     {
+        $pippo=$this->servicesConnectorConfiguration->getUseServicesConnector();
+
         try {
             if (!$this->servicesConnectorConfiguration->getUseServicesConnector()) {
                 return true;
